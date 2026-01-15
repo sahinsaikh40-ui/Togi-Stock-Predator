@@ -3,8 +3,8 @@ import random
 import time
 
 # অ্যাপের নাম এবং পেজ সেটআপ
-st.set_page_config(page_title="Rani AI", layout="centered")
-st.header("🐯 Rani AI Stock Predator")
+st.set_page_config(page_title="Togi AI", layout="centered")
+st.header("🐯 Togi AI Stock Predator")
 st.caption("Profit Target: 100% | Strategy: Genetic Algorithm")
 
 # ইউজার ইনপুট (কোথায় ট্রেড করবেন)
@@ -35,4 +35,4 @@ if st.button('Analyze Market 🚀'):
 
 # ফুটার
 st.markdown("---")
-st.write("Owner: Sakil SK | Powered by Rani AI Group")
+st.write("Owner: Sahin saikh | Powered by Togi AI Group")
