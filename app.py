@@ -2,37 +2,48 @@ import streamlit as st
 import random
 import time
 
-# অ্যাপের নাম এবং পেজ সেটআপ
-st.set_page_config(page_title="Togi AI", layout="centered")
-st.header("🐯 Togi AI Stock Predator")
-st.caption("Profit Target: 100% | Strategy: Genetic Algorithm")
+# ১. পেজের নাম ও আইকন সেট করা
+st.set_page_config(page_title="Togi AI - Stock Predator", page_icon="🐯", layout="centered")
 
-# ইউজার ইনপুট (কোথায় ট্রেড করবেন)
-option = st.selectbox(
-    'Select Stock to Analyze:',
-    ('TATA MOTORS', 'RELIANCE', 'ADANI ENT', 'BANK NIFTY')
-)
+# ২. হেডলাইন সাজানো (Title)
+st.title("🐯 Togi AI Stock Predator")
+st.markdown("### 🚀 World's Smartest AI for Stock Market Beginners")
+st.divider() # একটা লম্বা দাগ (Divider)
 
-# বাটন (যেটা টিপলে রেজাল্ট আসবে)
-if st.button('Analyze Market 🚀'):
-    
-    # লোডিং এনিমেশন (যেন মনে হয় AI ভাবছে)
-    with st.spinner('Genetic Algorithm is thinking...'):
-        time.sleep(3) 
-    
-    # রেজাল্ট দেখানো
-    st.success("Signal Generated! ✅")
-    
-    # এখানে আমরা দেখাচ্ছি অ্যাপ কেমন আউটপুট দেবে
-    col1, col2 = st.columns(2)
-    with col1:
-        st.metric(label="Action", value="BUY NOW 🟢")
-    with col2:
-        st.metric(label="Confidence", value="94%")
-        
-    st.write(f"👉 **Target Price:** ₹{random.randint(500, 3000)}")
-    st.warning("Maintain strict Stop Loss. Market is volatile.")
+# ৩. ইনপুট সেকশন সাজানো (Columns)
+col1, col2 = st.columns(2) # পেজকে দুই ভাগে ভাগ করলাম
 
-# ফুটার
-st.markdown("---")
-st.write("Owner: Sahin saikh | Powered by Togi AI Group")
+with col1:
+    # বাঁদিকের কলাম
+    option = st.selectbox(
+        '🔍 Select Stock to Analyze:',
+        ('TATA MOTORS', 'RELIANCE', 'ADANI ENT', 'HDFC BANK', 'NIFTY 50')
+    )
+
+with col2:
+    # ডানদিকের কলাম
+    mode = st.radio("⚡ Trading Mode:", ["Intraday (Fast)", "Swing (Safe)"])
+
+# ৪. বাটন এবং রেজাল্ট সাজানো
+st.write("") # একটু ফাঁকা জায়গা
+if st.button('🤖 Ask Togi to Analyze', use_container_width=True):
+    
+    # লোডিং ডিজাইন
+    with st.spinner(f'🐯 Togi is analyzing millions of data points for {option}...'):
+        time.sleep(3) # ৩ সেকেন্ড ওয়েট
+    
+    # রেজাল্ট বক্স
+    st.success("Analysis Complete! Signal Found. ✅")
+    
+    # বড় ফন্টে রেজাল্ট (Metrics)
+    m1, m2, m3 = st.columns(3)
+    m1.metric("Action", "BUY NOW", "Strong Buy")
+    m1.metric("Confidence", f"{random.randint(90, 99)}%", "+5%")
+    m1.metric("Target Price", f"₹{random.randint(500, 3000)}", "High Profit")
+    
+    # নিচের ওয়ার্নিং মেসেজ
+    st.info("💡 **Togi's Tip:** Market is volatile today. Keep Stop Loss strict.")
+
+# ৫. ফুটার (নিচের অংশ)
+st.divider()
+st.caption(f"Owner: **Sakil SK** | Developed by **Togi AI Group** | © 2026")
