@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+yfinance
+smartapi-python
+pyotp
+plotly
+textblob
+scikit-learn
+joblib
