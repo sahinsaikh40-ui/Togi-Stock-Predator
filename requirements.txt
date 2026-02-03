@@ -8,3 +8,5 @@ plotly
 textblob
 scikit-learn
 joblib
+tensorflow
+logzero
