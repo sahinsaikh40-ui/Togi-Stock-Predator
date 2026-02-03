@@ -10,3 +10,4 @@ scikit-learn
 joblib
 tensorflow
 logzero
+websocket-client
